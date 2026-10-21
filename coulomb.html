@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#121316">
+  <title>Coulomb · ripasso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="coulomb.css?v=1">
+</head>
+<body>
+
+  <!-- schermata iniziale -->
+  <section id="home" class="schermo attivo">
+    <div class="home-alto">
+      <svg class="logo" viewBox="0 0 112 40" aria-hidden="true">
+        <circle cx="18" cy="20" r="14" class="pos"/>
+        <circle cx="94" cy="20" r="14" class="neg"/>
+        <path d="M12 20h12M18 14v12" class="segno"/>
+        <path d="M88 20h12" class="segno"/>
+        <path d="M38 20h14M46 14l6 6-6 6" class="freccia"/>
+        <path d="M74 20h-14M66 14l-6 6 6 6" class="freccia"/>
+      </svg>
+      <h1>Coulomb</h1>
+      <p class="sotto">Ripasso di fisica:<br>cariche elettriche e legge di Coulomb</p>
+    </div>
+
+    <div class="blocco">
+      <div class="etichetta">Che cosa vuoi ripassare?</div>
+      <div id="argomenti" class="chips"></div>
+    </div>
+
+    <div class="blocco">
+      <div class="etichetta">Quante domande?</div>
+      <div id="quante" class="segmenti">
+        <button data-n="10" class="sel">10</button>
+        <button data-n="20">20</button>
+        <button data-n="30">30</button>
+      </div>
+    </div>
+
+    <div class="home-basso">
+      <button id="inizia" class="primario">Inizia</button>
+      <button id="apriFormule" class="secondario">Formulario</button>
+      <div id="versione" class="versione"></div>
+    </div>
+  </section>
+
+  <!-- domanda -->
+  <section id="quiz" class="schermo">
+    <header class="barra">
+      <button id="esci" class="tondo" aria-label="Torna all’inizio">✕</button>
+      <div class="contatore"><span id="numero"></span><span id="argomento" class="arg"></span></div>
+      <div id="punti" class="punti"></div>
+    </header>
+    <div id="pallini" class="pallini"></div>
+    <button id="ascolta" class="ascolta">🔊 Ascolta</button>
+    <main id="corpo" class="corpo">
+      <div id="domanda" class="domanda"></div>
+      <div id="opzioni" class="opzioni"></div>
+      <div id="esito" class="esito"></div>
+    </main>
+    <footer class="piede">
+      <button id="avanti" class="primario" disabled>Avanti</button>
+    </footer>
+  </section>
+
+  <!-- fine -->
+  <section id="fine" class="schermo">
+    <main class="corpo">
+      <div class="risultato">
+        <div id="voto" class="voto"></div>
+        <div id="giudizio" class="giudizio"></div>
+      </div>
+      <div id="errori" class="errori"></div>
+    </main>
+    <footer class="piede due">
+      <button id="ripetiErrori" class="secondario">Ripeti gli errori</button>
+      <button id="nuovoGiro" class="primario">Nuovo giro</button>
+    </footer>
+  </section>
+
+  <!-- formulario -->
+  <section id="formule" class="schermo">
+    <header class="barra">
+      <button id="chiudiFormule" class="tondo" aria-label="Chiudi">✕</button>
+      <div class="contatore"><span>Formulario</span></div>
+      <div></div>
+    </header>
+    <main id="formuleCorpo" class="corpo"></main>
+  </section>
+
+  <script src="coulomb-domande.js?v=1"></script>
+  <script src="coulomb.js?v=1"></script>
+</body>
+</html>
