@@ -48,13 +48,11 @@ function disegnaHome() {
 
 /* ---------- costruzione del giro ---------- */
 
-const PESO_GENERATE = 4;   // quante "copie" di ogni tipo di esercizio nel mazzo
-
 function nuovoGiro(n) {
   const fisse = rimescola(FISSE.filter(v => scelti.has(v.t)));
   const gen = GENERATE.filter(v => scelti.has(v.t));
   let mazzo = fisse.slice();
-  gen.forEach(g => { for (let k = 0; k < PESO_GENERATE; k++) mazzo.push(g); });
+  gen.forEach(g => { for (let k = 0; k < (g.peso || 1); k++) mazzo.push(g); });
   mazzo = rimescola(mazzo);
   // le fisse non si ripetono; gli esercizi sì (cambiano i numeri)
   const out = mazzo.slice(0, n);

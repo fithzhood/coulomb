@@ -168,7 +168,7 @@ h1 { margin: 6px 0 4px; font-size: 2rem; letter-spacing: .02em; }
 
 /* formule */
 .fr { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .15em; line-height: 1.15; }
-.fr > span { padding: 0 .2em; }
+.fr > span { padding: 0 .2em; white-space: nowrap; }
 .fr > span:first-child { border-bottom: 1px solid currentColor; }
 sup, sub { font-size: .7em; line-height: 0; }
 .vet { position: relative; display: inline-block; }

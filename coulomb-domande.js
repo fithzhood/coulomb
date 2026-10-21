@@ -23,7 +23,7 @@ const ARGOMENTI = [
   { id: 'coulomb',     nome: 'Legge di Coulomb' },
   { id: 'dielettrico', nome: 'Costante dielettrica' },
   { id: 'sovrapp',     nome: 'Tre cariche' },
-  { id: 'esercizi',    nome: 'Esercizi con i numeri' }
+  { id: 'esercizi',    nome: 'Esercizi: le formule' }
 ];
 
 /* ---------- numeri all'italiana ---------- */
@@ -281,7 +281,112 @@ const FISSE = [
     s: 'Ora le due forze sono repulsive.<br>Ma sono ancora uguali e opposte → totale = 0.' },
   { t: 'sovrapp', d: 'Righello: la carica negativa è fra le due positive uguali.<br>Ma è <b>più vicina a q_{1}</b>.<br>Dove va la forza totale?',
     ok: 'Verso q_{1}', no: ['È zero', 'Verso q_{2}', 'In alto'],
-    s: 'Più vicino = forza più forte.<br>Vince la forza di q_{1}.' }
+    s: 'Più vicino = forza più forte.<br>Vince la forza di q_{1}.' },
+
+  // --- teoria aggiunta ---
+  // carica
+  { t: 'carica', d: 'Di che cosa è fatto ogni oggetto intorno a noi?',
+    ok: 'Di atomi', no: ['Di sola elettricità', 'Di coulomb', 'Di sole cariche positive'],
+    s: 'Ogni oggetto è fatto di atomi.<br>Dentro gli atomi ci sono cariche + e cariche −.' },
+  { t: 'carica', d: 'Dentro un atomo, che tipi di carica ci sono?',
+    ok: 'Positiva (+) e negativa (−)', no: ['Solo positiva', 'Solo negativa', 'Nessuna'],
+    s: 'I protoni sono +.<br>Gli elettroni sono −.' },
+  { t: 'carica', d: 'Nella formula q = n · e, che cos’è <b>n</b>?',
+    ok: 'Il numero di elettroni', no: ['La carica in coulomb', 'La costante k_{0}', 'La distanza'],
+    s: 'n = quanti elettroni ci sono.<br>È un numero intero: 1, 2, 3…' },
+  { t: 'carica', d: 'Nella formula q = n · e, che cos’è <b>e</b>?',
+    ok: 'La carica di un elettrone', no: ['Il numero di elettroni', 'La forza', 'L’energia'],
+    s: 'e = 1,602 × 10^{-19} C.<br>È la carica di un elettrone, senza segno.' },
+  { t: 'carica', d: 'Nella formula q = n · e, che cos’è <b>q</b>?',
+    ok: 'La carica totale del corpo', no: ['Il numero di protoni', 'La carica di un solo elettrone', 'La distanza'],
+    s: 'q è la carica di tutto il corpo.<br>Si misura in coulomb (C).' },
+  { t: 'carica', d: 'Il numero di elettroni n può essere 2,5?',
+    ok: 'No: n è sempre un numero intero', no: ['Sì, sempre', 'Sì, se la carica è positiva', 'Solo nel vuoto'],
+    s: 'Non esiste mezzo elettrone.<br>Per questo n è intero e q è un multiplo di e.' },
+  { t: 'carica', d: 'Un corpo ha <b>perso</b> elettroni.<br>Com’è carico?',
+    ok: 'Positivo (+)', no: ['Negativo (−)', 'Neutro', 'Dipende dal materiale'],
+    s: 'Ha perso cariche −.<br>Restano di più le cariche +.' },
+
+  // conduttori
+  { t: 'conduttori', d: 'Nei conduttori, chi porta l’elettricità?',
+    ok: 'Gli elettroni', no: ['I protoni', 'Gli atomi interi', 'L’aria'],
+    s: 'Sono gli elettroni a muoversi e a portare l’elettricità.' },
+  { t: 'conduttori', d: 'Plastica e gomma sono conduttori o isolanti?',
+    ok: 'Isolanti', no: ['Conduttori', 'La plastica conduce, la gomma no', 'Dipende dal colore'],
+    s: 'Plastica e gomma bloccano l’elettricità: sono isolanti.' },
+  { t: 'conduttori', d: 'I fili elettrici hanno il rame dentro e la plastica fuori.<br><b>Perché?</b>',
+    ok: 'Il rame fa passare l’elettricità, la plastica la tiene dentro',
+    no: ['Il rame è più bello', 'La plastica fa passare l’elettricità', 'Il rame blocca l’elettricità'],
+    s: 'Rame = conduttore: l’elettricità passa.<br>Plastica = isolante: la blocca e ci protegge.' },
+
+  // elettrizzazione
+  { t: 'elettr', d: 'Quando strofino due oggetti, nascono cariche nuove?',
+    ok: 'No: gli elettroni passano da un oggetto all’altro',
+    no: ['Sì, nascono elettroni nuovi', 'Sì, nascono protoni nuovi', 'Sì, il calore crea cariche'],
+    s: 'Le cariche non nascono dal nulla.<br>Gli elettroni si spostano: uno li perde, l’altro li prende.' },
+  { t: 'elettr', d: 'Per <b>contatto</b>: la sfera prende la carica dello stesso segno della bacchetta?',
+    ok: 'Sì: bacchetta − → sfera −', no: ['No: prende il segno opposto', 'No: resta neutra', 'Prende metà + e metà −'],
+    s: 'La bacchetta passa i suoi elettroni alla sfera.<br>Quindi la sfera ha lo stesso segno.' },
+  { t: 'elettr', d: 'Che differenza c’è fra <b>contatto</b> e <b>induzione</b>?',
+    ok: 'Nel contatto si tocca, nell’induzione no',
+    no: ['Nell’induzione si tocca, nel contatto no', 'Nessuna differenza', 'L’induzione si fa solo strofinando'],
+    s: 'Contatto = la bacchetta tocca la sfera.<br>Induzione = la bacchetta si avvicina e basta.' },
+  { t: 'elettr', d: 'Nell’induzione, a che cosa serve il <b>filo a terra</b>?',
+    ok: 'A far uscire dalla sfera alcune cariche',
+    no: ['A far entrare protoni nella sfera', 'A tenere ferma la sfera', 'A scaricare la bacchetta'],
+    s: 'Lungo il filo alcune cariche − scappano a terra.<br>Così la sfera resta carica.' },
+  { t: 'elettr', d: '<b>Polarizzazione</b>: allontano la bacchetta.<br>Che cosa succede?',
+    ok: 'Le cariche tornano come prima', no: ['La plastica resta carica per sempre', 'La plastica diventa negativa', 'La plastica diventa un conduttore'],
+    s: 'La polarizzazione è temporanea.<br>Senza bacchetta vicino, tutto torna come prima.' },
+  { t: 'elettr', d: '<b>Polarizzazione</b>: gli elettroni passano dalla bacchetta alla plastica?',
+    ok: 'No: le cariche si spostano solo dentro le molecole',
+    no: ['Sì, tutti', 'Sì, ma solo alcuni', 'No: passano i protoni'],
+    s: 'Non passa niente da un corpo all’altro.<br>Le molecole si «girano» un po’ e basta.' },
+
+  // Coulomb
+  { t: 'coulomb', d: 'Che cosa calcola la <b>legge di Coulomb</b>?',
+    ok: 'La forza fra due cariche', no: ['La carica di un elettrone', 'Il numero di elettroni', 'La distanza fra due cariche'],
+    s: 'La legge di Coulomb serve a calcolare la forza fra due cariche.' },
+  { t: 'coulomb', d: 'Che cos’è k_{0}?',
+    ok: 'Una costante: la costante elettrostatica', no: ['Una carica', 'Una distanza', 'Una forza'],
+    s: 'k_{0} è sempre lo stesso numero: 8,99 × 10^{9} N·m^{2}/C^{2} (nel vuoto).' },
+  { t: 'coulomb', d: 'Come capisco se la forza è <b>attrattiva</b> o <b>repulsiva</b>?',
+    ok: 'Guardo i segni delle cariche', no: ['Guardo la distanza', 'Guardo il valore di k_{0}', 'Faccio il calcolo e guardo il risultato'],
+    s: 'Segni uguali → repulsiva.<br>Segni opposti → attrattiva.<br>Il calcolo dà solo quanto è forte.' },
+  { t: 'coulomb', d: 'Q_{1} tira Q_{2} con una forza.<br>Q_{2} tira Q_{1} con una forza.<br>Come sono queste due forze?',
+    ok: 'Uguali, ma in versi opposti', no: ['Più forte quella della carica più grande', 'Una è zero', 'Uguali e nello stesso verso'],
+    s: 'Le due cariche si scambiano la <b>stessa</b> forza.<br>Ognuna tira (o spinge) l’altra in verso opposto.' },
+  { t: 'coulomb', d: 'Nella formula di Coulomb, in che unità scrivo le <b>cariche</b>?',
+    ok: 'In coulomb (C)', no: ['In μC, come nel testo', 'In newton (N)', 'In metri (m)'],
+    s: 'Sempre in coulomb.<br>Se sono in μC le scrivo × 10^{-6} C.' },
+  { t: 'coulomb', d: 'Q_{1} = −4 μC<br>Q_{2} = −1 μC<br>La forza è attrattiva o repulsiva?',
+    ok: 'Repulsiva', no: ['Attrattiva', 'Non c’è forza', 'Dipende dalla distanza'],
+    s: 'Tutte e due negative: segni uguali.<br>Segni uguali → repulsiva.' },
+
+  // dielettrico
+  { t: 'dielettrico', d: 'Dove è <b>più forte</b> la forza fra due cariche?',
+    ok: 'Nel vuoto', no: ['Nell’acqua', 'Nel vetro', 'Nel legno'],
+    s: 'In ogni materiale la forza è più piccola che nel vuoto.' },
+  { t: 'dielettrico', d: 'ε_{r} è più grande.<br>Che cosa fa la forza nel materiale?',
+    ok: 'Diventa più piccola', no: ['Diventa più grande', 'Resta uguale', 'Cambia segno'],
+    s: 'ε_{r} sta sotto, al denominatore.<br>Più è grande, più la forza diventa piccola.' },
+  { t: 'dielettrico', d: 'Nella formula dentro il materiale, dove va ε_{r}?',
+    ok: 'Sotto, al denominatore', no: ['Sopra, al numeratore', 'Si somma alla forza', 'Non c’è'],
+    s: 'F = k_{0} · fr{|Q_{1} · Q_{2}|¦ε_{r} · r^{2}}<br>ε_{r} sta sotto, vicino a r^{2}.' },
+
+  // tre cariche
+  { t: 'sovrapp', d: 'Quando si usa il <b>principio di sovrapposizione</b>?',
+    ok: 'Quando ci sono tre o più cariche', no: ['Solo con due cariche', 'Solo nel vuoto', 'Solo con cariche positive'],
+    s: 'Con tre o più cariche, ogni carica subisce più forze.<br>Le sommo: è il principio di sovrapposizione.' },
+  { t: 'sovrapp', d: 'Le forze si sommano come numeri o come frecce?',
+    ok: 'Come frecce (vettori)', no: ['Come numeri normali', 'Non si sommano', 'Si moltiplicano'],
+    s: 'Conta anche il verso.<br>Due forze opposte e uguali si annullano.' },
+  { t: 'sovrapp', d: 'Due forze uguali, in versi <b>opposti</b>.<br>Quanto fa la forza totale?',
+    ok: 'Zero', no: ['Il doppio', 'La metà', 'Uguale a una sola forza'],
+    s: 'Una tira da una parte, l’altra dall’altra con la stessa forza.<br>Si annullano: totale = 0.' },
+  { t: 'sovrapp', d: 'Due forze uguali, nello <b>stesso verso</b>.<br>Quanto fa la forza totale?',
+    ok: 'Il doppio di una forza', no: ['Zero', 'La metà', 'Uguale a una sola forza'],
+    s: 'Tirano dalla stessa parte.<br>Si sommano: il totale è il doppio.' }
 ];
 
 /* ---------- domande generate ---------- */
@@ -437,13 +542,177 @@ function genDielettricoSemplice() {
   };
 }
 
+/* ---------- esercizi sulle formule (contano le formule, non i conti) ---------- */
+
+const FORM = {
+  q:      'q = n · e',
+  n:      'n = fr{q¦e}',
+  nSb:    'n = q · e',
+  C:      'F = k_{0} · fr{|Q_{1} · Q_{2}|¦r^{2}}',
+  Csb:    'F = k_{0} · fr{|Q_{1} · Q_{2}|¦r}',
+  Cm:     'F = fr{k_{0}¦ε_{r}} · fr{|Q_{1} · Q_{2}|¦r^{2}}',
+  Cmsb:   'F = k_{0} · ε_{r} · fr{|Q_{1} · Q_{2}|¦r^{2}}',
+  Fm:     'F_{mezzo} = fr{F_{vuoto}¦ε_{r}}',
+  Fmsb:   'F_{mezzo} = F_{vuoto} · ε_{r}'
+};
+
+// scegliere la formula giusta per il problema
+function genQualeFormula() {
+  const a = intero(11, 99) / 10, b = intero(10, 15);
+  const casi = [
+    { d: 'Un corpo ha in più ' + sci(a * Math.pow(10, b), 2) + ' elettroni.<br>Vuoi sapere la sua <b>carica</b>.',
+      ok: 'q', no: ['n', 'C', 'Fm'], s: 'Conosco n (gli elettroni). Cerco q.<br>Uso q = n · e.' },
+    { d: 'Hai una carica di ' + MENO + virgola(a) + ' C.<br>Vuoi sapere <b>quanti elettroni</b> ci sono.',
+      ok: 'n', no: ['nSb', 'q', 'C'], s: 'Conosco q. Cerco n.<br>Da q = n · e ricavo n = fr{q¦e}: si <b>divide</b>.' },
+    { d: 'Due cariche sono nel <b>vuoto</b>.<br>Conosci le cariche e la distanza.<br>Vuoi sapere la <b>forza</b>.',
+      ok: 'C', no: ['Csb', 'q', 'Fm'], s: 'Forza fra due cariche nel vuoto: legge di Coulomb.<br>Attenzione: r va <b>al quadrato</b>.' },
+    { d: 'Due cariche sono <b>nell’acqua</b> (ε_{r} = 80).<br>Conosci le cariche e la distanza.<br>Vuoi sapere la <b>forza</b>.',
+      ok: 'Cm', no: ['Cmsb', 'C', 'n'], s: 'Siamo dentro un materiale: serve ε_{r}.<br>k_{0} si <b>divide</b> per ε_{r}.' },
+    { d: 'Nel vuoto la forza è ' + virgola(a) + ' N.<br>Metti le cariche nel <b>vetro</b> (ε_{r} = 6).<br>Vuoi sapere la nuova forza.',
+      ok: 'Fm', no: ['Fmsb', 'C', 'q'], s: 'Conosco già la forza nel vuoto.<br>La divido per ε_{r}: F_{mezzo} = fr{F_{vuoto}¦ε_{r}}.' }
+  ];
+  const c = caso(casi);
+  return {
+    d: c.d + '<br><b>Quale formula usi?</b>',
+    opz: [{ x: FORM[c.ok], ok: true }].concat(c.no.map(k => ({ x: FORM[k], ok: false }))),
+    s: c.s
+  };
+}
+
+// impostare il calcolo: mettere i dati giusti al posto giusto
+function genImposta() {
+  const tipo = caso(['q', 'n', 'C', 'C', 'Cm']);
+  const a = intero(1, 9), b = intero(1, 9);
+  const s1 = caso([1, -1]), s2 = caso([1, -1]);
+
+  if (tipo === 'q') {
+    const m = intero(11, 99) / 10, e = intero(10, 15);
+    const n = virgola(m) + ' × 10^{' + e + '}';
+    return {
+      d: 'Un corpo ha in più ' + n + ' elettroni.<br>Vuoi la sua carica.<br><b>Come imposti il calcolo?</b>',
+      opz: [
+        { x: 'q = ' + n + ' × 1,602 × 10^{-19}', ok: true },
+        { x: 'q = fr{' + n + '¦1,602 × 10^{-19}}', ok: false },
+        { x: 'q = ' + n + ' + 1,602 × 10^{-19}', ok: false },
+        { x: 'q = ' + n + ' × 1,602 × 10^{19}', ok: false }
+      ],
+      s: passi(['Formula: q = n · e', 'n = ' + n + ' (gli elettroni)', 'e = 1,602 × 10^{-19} C, con l’esponente <b>negativo</b>',
+        'Si <b>moltiplica</b>: q = ' + n + ' × 1,602 × 10^{-19}'])
+    };
+  }
+  if (tipo === 'n') {
+    const m = intero(11, 99) / 10;
+    const qs = virgola(m) + ' C';
+    return {
+      d: 'Hai una carica di ' + MENO + qs + '.<br>Vuoi sapere quanti elettroni ci sono.<br><b>Come imposti il calcolo?</b>',
+      opz: [
+        { x: 'n = fr{' + qs + '¦1,602 × 10^{-19} C}', ok: true },
+        { x: 'n = ' + virgola(m) + ' × 1,602 × 10^{-19}', ok: false },
+        { x: 'n = fr{1,602 × 10^{-19} C¦' + qs + '}', ok: false },
+        { x: 'n = fr{' + qs + '¦1,602 × 10^{19} C}', ok: false }
+      ],
+      s: passi(['Formula: n = fr{q¦e}', 'Sopra la carica q, sotto la carica e di un elettrone', 'Il segno − lo lascio stare: dice solo che sono elettroni'])
+    };
+  }
+  const inCm = tipo === 'C' && Math.random() < 0.5;
+  const rcm = caso([10, 20, 30, 40, 50]);
+  const r = inCm ? virgola(rcm / 100) : virgola(caso([0.2, 0.3, 0.5, 0.6, 1.5, 2]));
+  // le stanghette | | tolgono il segno: le cariche si scrivono già senza
+  const QQ = a + ' × 10^{-6} · ' + b + ' × 10^{-6}';
+  const dati = 'Q_{1} = ' + segnato(a * s1, 'μC') + '<br>Q_{2} = ' + segnato(b * s2, 'μC') +
+               '<br>distanza r = ' + (inCm ? rcm + ' cm' : r + ' m');
+  const K = '8,99 × 10^{9}';
+  if (tipo === 'C') {
+    const opz = [
+      { x: 'F = ' + K + ' · fr{' + QQ + '¦(' + r + ')^{2}}', ok: true },
+      { x: 'F = ' + K + ' · fr{' + QQ + '¦' + r + '}', ok: false },
+      { x: 'F = ' + K + ' · fr{' + a + ' · ' + b + '¦(' + r + ')^{2}}', ok: false },
+      inCm ? { x: 'F = ' + K + ' · fr{' + QQ + '¦(' + rcm + ')^{2}}', ok: false }
+           : { x: 'F = fr{' + QQ + '¦' + K + ' · (' + r + ')^{2}}', ok: false }
+    ];
+    const p = ['Le cariche in coulomb: μC → × 10^{-6}', 'Le stanghette | | tolgono il segno: scrivo le cariche senza + e −'];
+    if (inCm) p.push('La distanza in metri: ' + rcm + ' cm = ' + r + ' m');
+    p.push('k_{0} sta davanti, la distanza sotto e <b>al quadrato</b>');
+    return { d: 'Due cariche nel vuoto:<br>' + dati + '<br><b>Come imposti il calcolo della forza?</b>', opz, s: passi(p) };
+  }
+  // in un materiale
+  const er = caso(['2', '4', '5', '80']);
+  return {
+    d: 'Due cariche dentro un materiale:<br>' + dati + '<br>ε_{r} = ' + er + '<br><b>Come imposti il calcolo della forza?</b>',
+    opz: [
+      { x: 'F = fr{' + K + ' · ' + QQ + '¦' + er + ' · (' + r + ')^{2}}', ok: true },
+      { x: 'F = fr{' + K + ' · ' + er + ' · ' + QQ + '¦(' + r + ')^{2}}', ok: false },
+      { x: 'F = fr{' + K + ' · ' + QQ + '¦(' + r + ')^{2}}', ok: false },
+      { x: 'F = fr{' + K + ' · ' + QQ + '¦' + er + ' · ' + r + '}', ok: false }
+    ],
+    s: passi(['Formula: F = k_{0} · fr{|Q_{1} · Q_{2}|¦ε_{r} · r^{2}}', 'ε_{r} = ' + er + ' va <b>sotto</b>, vicino a r^{2}', 'Le cariche senza segno, in coulomb (× 10^{-6})', 'La distanza resta sotto e al quadrato'])
+  };
+}
+
+// che cosa va convertito prima di usare la formula
+function genConverti() {
+  const caso_ = caso([
+    { r: '0,5 m', q: '3 μC', ok: 'Solo le cariche (μC → C)' },
+    { r: '20 cm', q: '3 μC', ok: 'Le cariche (μC → C) e la distanza (cm → m)' },
+    { r: '40 cm', q: '2 × 10^{-6} C', ok: 'Solo la distanza (cm → m)' },
+    { r: '1,5 m', q: '4 × 10^{-6} C', ok: 'Niente: è già tutto in C e in m' }
+  ]);
+  const tutte = ['Solo le cariche (μC → C)', 'Le cariche (μC → C) e la distanza (cm → m)',
+                 'Solo la distanza (cm → m)', 'Niente: è già tutto in C e in m'];
+  return {
+    d: 'Devi usare la legge di Coulomb.<br>Ogni carica vale ' + caso_.q + '.<br>La distanza è ' + caso_.r + '.<br><b>Che cosa devi convertire prima?</b>',
+    opz: tutte.map(x => ({ x, ok: x === caso_.ok })),
+    s: 'Nella formula: cariche in <b>coulomb (C)</b>, distanza in <b>metri (m)</b>.<br>μC → × 10^{-6} C.<br>cm → : 100 → m.'
+  };
+}
+
+// che unità ha il risultato
+function genUnita() {
+  const c = caso([
+    { d: 'Calcoli q = n · e.', ok: 'Coulomb (C)' },
+    { d: 'Calcoli la forza con la legge di Coulomb.', ok: 'Newton (N)' },
+    { d: 'Calcoli n = q / e.', ok: 'Nessuna: è un numero di elettroni' },
+    { d: 'Calcoli F_{mezzo} = fr{F_{vuoto}¦ε_{r}}.', ok: 'Newton (N)' }
+  ]);
+  const tutte = ['Coulomb (C)', 'Newton (N)', 'Nessuna: è un numero di elettroni', 'Metri (m)'];
+  return {
+    d: c.d + '<br><b>In che unità è il risultato?</b>',
+    opz: tutte.map(x => ({ x, ok: x === c.ok })),
+    s: 'Carica → coulomb (C).<br>Forza → newton (N).<br>Numero di elettroni → solo un numero.'
+  };
+}
+
+// attrattiva o repulsiva, con segni a caso
+function genTipoForza() {
+  const s1 = caso([1, -1]), s2 = caso([1, -1]);
+  const a = intero(1, 9), b = intero(1, 9);
+  const att = s1 * s2 < 0;
+  return {
+    d: 'Q_{1} = ' + segnato(a * s1, 'μC') + '<br>Q_{2} = ' + segnato(b * s2, 'μC') + '<br><b>La forza è attrattiva o repulsiva?</b>',
+    opz: [
+      { x: 'Attrattiva', ok: att },
+      { x: 'Repulsiva', ok: !att },
+      { x: 'Non c’è forza', ok: false },
+      { x: 'Dipende dalla distanza', ok: false }
+    ],
+    s: att ? 'Segni opposti (+ e −) → si attraggono.' : 'Segni uguali → si respingono.'
+  };
+}
+
+// peso = quante volte il tipo entra nel mazzo (una domanda fissa pesa 1).
+// Contano di più le formule; i conti fino in fondo sono pochi.
 const GENERATE = [
-  { t: 'esercizi', nome: 'q = n · e', gen: genCaricaDaElettroni },
-  { t: 'esercizi', nome: 'n = q / e', gen: genElettroniDaCarica },
-  { t: 'esercizi', nome: 'Coulomb nel vuoto', gen: genCoulombVuoto },
-  { t: 'esercizi', nome: 'Coulomb in un materiale', gen: genCoulombMezzo },
-  { t: 'coulomb', nome: 'proporzioni', gen: genProporzioni },
-  { t: 'dielettrico', nome: 'F / εr', gen: genDielettricoSemplice }
+  { t: 'esercizi', nome: 'quale formula', gen: genQualeFormula, peso: 4 },
+  { t: 'esercizi', nome: 'impostare il calcolo', gen: genImposta, peso: 5 },
+  { t: 'esercizi', nome: 'che cosa convertire', gen: genConverti, peso: 2 },
+  { t: 'esercizi', nome: 'unità del risultato', gen: genUnita, peso: 2 },
+  { t: 'esercizi', nome: 'q = n · e (conto)', gen: genCaricaDaElettroni, peso: 1 },
+  { t: 'esercizi', nome: 'n = q / e (conto)', gen: genElettroniDaCarica, peso: 1 },
+  { t: 'esercizi', nome: 'Coulomb nel vuoto (conto)', gen: genCoulombVuoto, peso: 1 },
+  { t: 'esercizi', nome: 'Coulomb in un materiale (conto)', gen: genCoulombMezzo, peso: 1 },
+  { t: 'coulomb', nome: 'attrattiva o repulsiva', gen: genTipoForza, peso: 1 },
+  { t: 'coulomb', nome: 'proporzioni', gen: genProporzioni, peso: 2 },
+  { t: 'dielettrico', nome: 'F / εr', gen: genDielettricoSemplice, peso: 1 }
 ];
 
 // produce una domanda pronta da mostrare: { t, d, opz, s }
